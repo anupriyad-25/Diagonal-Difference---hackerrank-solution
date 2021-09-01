@@ -1,0 +1,29 @@
+int n=arr.size();
+        int sum=0,s=0;
+        int sum1=0,s1=0;
+        int diag1=0, diag2=0;
+        
+        for (int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==j)
+                {diag1+=arr.get(i).get(j);
+                }
+                
+            }
+        }
+        
+        int a=0;
+        int b=n-1;
+        while(a<=(n-1) && b>=0)
+        {
+            diag2+=arr.get(a).get(b);
+            
+            a++;
+            b--;
+        }
+        
+        int diff=diag1-diag2;
+        int answer=Math.abs(diag1-diag2);
+        return answer;
